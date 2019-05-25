@@ -1,0 +1,19 @@
+{
+  "name": "tailwind",
+  "version": "0.0.0-alpha.1",
+  "description": "Digitalist styleguide Tailwindcss",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "export-colors": "tailwindcss-export-config --config=./src/colors.js --destination=build/colors --format=scss --flat=true",
+    "export-tokens": "tailwindcss-export-config --config=./tailwind.config.js --destination=build/tokens --format=scss --flat=true",
+    "export": "npm run export-colors && npm run export-tokens",
+    "build-utilities": "npm run export && postcss src/utilities --dir build/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "postcss-cli": "^6.1.2",
+    "tailwindcss": "^1.0.1",
+    "tailwindcss-export-config": "^2.0.0-beta.1"
+  }
+}
