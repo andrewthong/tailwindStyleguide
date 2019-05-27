@@ -14,8 +14,9 @@ module.exports = {
       transparent: 'transparent',
 
       white: '#ffffff',
+      black: '#000000',
 
-      black: {
+      grey: {
         300: '#9e9e9e',
         500: '#757575',
         700: '#3b3b3b'
@@ -57,25 +58,18 @@ module.exports = {
       }
     },
     spacing: {
-      // px: '1px',
-      // '0': '0',
-      // '1': '0.25rem',
-      // '2': '0.5rem',
-      // '3': '0.75rem',
-      // '4': '1rem',
-      // '5': '1.25rem',
-      // '6': '1.5rem',
-      // '8': '2rem',
-      // '10': '2.5rem',
-      // '12': '3rem',
-      // '16': '4rem',
-      // '20': '5rem',
-      // '24': '6rem',
-      // '32': '8rem',
-      // '40': '10rem',
-      // '48': '12rem',
-      // '56': '14rem',
-      // '64': '16rem',
+      px: '1px',
+      '0': '0',
+      '1': '0.25rem', // 4
+      '2': '0.5rem', // 8
+      '3': '0.75rem', // 12
+      '4': '1rem', // 16
+      '5': '1.5rem', // 24
+      '6': '2rem', // 32
+      '7': '2.5rem', // 40
+      '8': '4rem', // 64
+      '9': '6rem', // 96 (rare)
+      '10': '8rem', // 128 (rare utility)
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {
@@ -99,28 +93,25 @@ module.exports = {
       default: theme('colors.gray.300', 'currentColor'),
     }),
     borderRadius: {
-      // none: '0',
-      // sm: '0.125rem',
-      // default: '0.25rem',
-      // lg: '0.5rem',
-      // full: '9999px',
+      none: '0',
+      default: '0.125rem',
+      lg: '0.25rem',
+      full: '9999px',
     },
     borderWidth: {
-      // default: '1px',
-      // '0': '0',
-      // '2': '2px',
-      // '4': '4px',
-      // '8': '8px',
+      default: '1px',
+      '0': '0',
+      '2': '2px',
     },
     boxShadow: {
-      // default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      // md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      // lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-      // xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-      // '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-      // inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-      // outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
-      // none: 'none',
+      // default series is equivalent to "sharp" in design system
+      default: '0 2px 2px 0 rgba(0, 0, 0, 0.1)',
+      md: '0 2px 4px 0 rgba(0, 0, 0, 0.2)',
+      lg: '0 2px 4px 0 rgba(0, 0, 0, 0.4)',
+      'sm-soft': '0 2px 8px 0 rgba(0, 0, 0, 0.2)',
+      'md-soft': '0 2px 8px 0 rgba(0, 0, 0, 0.4)',
+      'lg-soft': '0 2px 8px 0 rgba(0, 0, 0, 0.6)',
+      none: 'none',
     },
     container: {},
     cursor: {
@@ -150,58 +141,31 @@ module.exports = {
       // default: '1',
     },
     fontFamily: {
-      // sans: [
-      //   '-apple-system',
-      //   'BlinkMacSystemFont',
-      //   '"Segoe UI"',
-      //   'Roboto',
-      //   '"Helvetica Neue"',
-      //   'Arial',
-      //   '"Noto Sans"',
-      //   'sans-serif',
-      //   '"Apple Color Emoji"',
-      //   '"Segoe UI Emoji"',
-      //   '"Segoe UI Symbol"',
-      //   '"Noto Color Emoji"',
-      // ],
-      // serif: [
-      //   'Georgia',
-      //   'Cambria',
-      //   '"Times New Roman"',
-      //   'Times',
-      //   'serif',
-      // ],
-      // mono: [
-      //   'Menlo',
-      //   'Monaco',
-      //   'Consolas',
-      //   '"Liberation Mono"',
-      //   '"Courier New"',
-      //   'monospace',
-      // ],
+      body: [
+        'Arial',
+        '"Helvetica Neue"',
+        'sans-serif'
+      ],
+      head: [
+        '"UniversLT"',
+        '"Arial Narrow"',
+        'sans-serif'
+      ]
     },
     fontSize: {
-      // xs: '0.75rem',
-      // sm: '0.875rem',
-      // base: '1rem',
-      // lg: '1.125rem',
-      // xl: '1.25rem',
-      // '2xl': '1.5rem',
-      // '3xl': '1.875rem',
-      // '4xl': '2.25rem',
-      // '5xl': '3rem',
-      // '6xl': '4rem',
+      xs: '0.75rem', // 12
+      sm: '0.875rem', // 14
+      base: '1rem', // 16
+      lg: '1.125rem', // 18
+      xl: '1.375rem', // 22
+      '2xl': '1.75rem', // 28
+      '3xl': '2.25rem', // 36
     },
     fontWeight: {
-      // hairline: '100',
-      // thin: '200',
-      // light: '300',
-      // normal: '400',
-      // medium: '500',
-      // semibold: '600',
-      // bold: '700',
-      // extrabold: '800',
-      // black: '900',
+      light: '300',
+      normal: '400',
+      medium: '500', //universLT does not have weight loaded
+      bold: '700',
     },
     height: theme => ({
       // auto: 'auto',
