@@ -208,17 +208,7 @@ module.exports = {
       // screen: '100vh',
     },
     maxWidth: {
-      // xs: '20rem',
-      // sm: '24rem',
-      // md: '28rem',
-      // lg: '32rem',
-      // xl: '36rem',
-      // '2xl': '42rem',
-      // '3xl': '48rem',
-      // '4xl': '56rem',
-      // '5xl': '64rem',
-      // '6xl': '72rem',
-      // full: '100%',
+      full: '100%',
     },
     minHeight: {
       // '0': '0',
@@ -241,15 +231,13 @@ module.exports = {
       // top: 'top',
     },
     opacity: {
-      // '0': '0',
-      // '25': '0.25',
-      // '50': '0.5',
-      // '75': '0.75',
-      // '100': '1',
-      // adding 4-6-9 scale but leaving the original as seem useful to have
+      // adding (1)-4-6-9 scale but leaving the original as seem useful to have
+      '0': '0',
+      '10': '0.1',
       '40': '0.4',
       '60': '0.6',
       '90': '0.9',
+      '100': '1',
     },
     order: {
       // first: '-9999',
@@ -268,8 +256,16 @@ module.exports = {
       // '11': '11',
       // '12': '12',
     },
-    // seems like a useful utility
-    padding: theme => theme('spacing'),
+    // using only the first 6 from spacing spec, the larger ones don't look useful
+    padding: theme => ({
+      '0': '0',
+      '1': '0.25rem', // 4
+      '2': '0.5rem', // 8
+      '3': '0.75rem', // 12
+      '4': '1rem', // 16
+      '5': '1.5rem', // 24
+      '6': '2rem', // 32
+    }),
     stroke: {
       // current: 'currentColor',
     },
