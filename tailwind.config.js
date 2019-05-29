@@ -18,8 +18,8 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
 
-      // all shades of grey as supported
-      grey: {
+      // all shades of gray as supported
+      gray: {
         50: '#eeeeee ',
         100: '#d8d8d8',
         200: '#bbbbbb',
@@ -83,7 +83,7 @@ module.exports = {
     backgroundColor: theme => ({
       white: '#ffffff',
       black: '#000000',
-      ...theme('colors.grey')
+      ...theme('colors.gray')
     }),
     backgroundPosition: {
       // bottom: 'bottom',
