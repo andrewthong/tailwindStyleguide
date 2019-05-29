@@ -16,10 +16,18 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
 
+      // all shades of grey as supported
       grey: {
+        50: '#eeeeee ',
+        100: '#d8d8d8',
+        200: '#bbbbbb',
         300: '#9e9e9e',
+        400: '#8a8a8a',
         500: '#757575',
-        700: '#3b3b3b'
+        600: '#555555',
+        700: '#3b3b3b',
+        800: '#111111',
+        900: '#000000'
       },
       yellow: {
         300: '#ffdb4d',
@@ -68,10 +76,13 @@ module.exports = {
       '6': '2rem', // 32
       '7': '2.5rem', // 40
       '8': '4rem', // 64
-      '9': '6rem', // 96 (rare)
-      '10': '8rem', // 128 (rare utility)
     },
-    backgroundColor: theme => theme('colors'),
+    // simplifying as only a few elements will have this
+    backgroundColor: theme => ({
+      white: '#ffffff',
+      black: '#000000',
+      ...theme('colors.grey')
+    }),
     backgroundPosition: {
       // bottom: 'bottom',
       // center: 'center',
@@ -90,7 +101,7 @@ module.exports = {
     },
     borderColor: theme => ({
       ...theme('colors'),
-      default: theme('colors.gray.300', 'currentColor'),
+      default: theme('colors.gray.500', 'currentColor'),
     }),
     borderRadius: {
       none: '0',
