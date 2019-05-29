@@ -1,14 +1,15 @@
 const baseConfig = require('../tailwind.config.js');
+const getFormattedConfig = require('../src/configFunctions/formatConfig.js');
 
-baseConfig.theme = {
-  ...baseConfig.theme,
-  backgroundColor: null,
-  borderColor: null,
-  textColor: null
+const coloursOnlyTheme = getFormattedConfig(baseConfig.theme, 'colors');
+
+const baseConfigWithColoursOnly = {
+  ...baseConfig,
+  theme: coloursOnlyTheme
 };
 
 module.exports = {
-  ...baseConfig,
+  ...baseConfigWithColoursOnly,
   corePlugins: [
     'textColor'
   ]
