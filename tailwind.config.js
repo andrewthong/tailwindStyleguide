@@ -18,10 +18,18 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
 
+      // all shades of grey as supported
       grey: {
+        50: '#eeeeee ',
+        100: '#d8d8d8',
+        200: '#bbbbbb',
         300: '#9e9e9e',
+        400: '#8a8a8a',
         500: '#757575',
-        700: '#3b3b3b'
+        600: '#555555',
+        700: '#3b3b3b',
+        800: '#111111',
+        900: '#000000'
       },
       yellow: {
         300: '#ffdb4d',
@@ -70,10 +78,13 @@ module.exports = {
       '6': '2rem', // 32
       '7': '2.5rem', // 40
       '8': '4rem', // 64
-      '9': '6rem', // 96 (rare)
-      '10': '8rem', // 128 (rare utility)
     },
-    backgroundColor: theme => theme('colors'),
+    // simplifying as only a few elements will have this
+    backgroundColor: theme => ({
+      white: '#ffffff',
+      black: '#000000',
+      ...theme('colors.grey')
+    }),
     backgroundPosition: {
       // bottom: 'bottom',
       // center: 'center',
@@ -92,7 +103,7 @@ module.exports = {
     },
     borderColor: theme => ({
       ...theme('colors'),
-      default: theme('colors.gray.300', 'currentColor'),
+      default: theme('colors.gray.500', 'currentColor'),
     }),
     borderRadius: {
       none: '0',
@@ -210,17 +221,7 @@ module.exports = {
       // screen: '100vh',
     },
     maxWidth: {
-      // xs: '20rem',
-      // sm: '24rem',
-      // md: '28rem',
-      // lg: '32rem',
-      // xl: '36rem',
-      // '2xl': '42rem',
-      // '3xl': '48rem',
-      // '4xl': '56rem',
-      // '5xl': '64rem',
-      // '6xl': '72rem',
-      // full: '100%',
+      full: '100%',
     },
     minHeight: {
       // '0': '0',
@@ -243,11 +244,13 @@ module.exports = {
       // top: 'top',
     },
     opacity: {
-      // '0': '0',
-      // '25': '0.25',
-      // '50': '0.5',
-      // '75': '0.75',
-      // '100': '1',
+      // adding (1)-4-6-9 scale but leaving the original as seem useful to have
+      '0': '0',
+      '10': '0.1',
+      '40': '0.4',
+      '60': '0.6',
+      '90': '0.9',
+      '100': '1',
     },
     order: {
       // first: '-9999',
@@ -266,42 +269,51 @@ module.exports = {
       // '11': '11',
       // '12': '12',
     },
-    // padding: theme => theme('spacing'),
+    // using only the first 6 from spacing spec, the larger ones don't look useful
+    padding: theme => ({
+      '0': '0',
+      '1': '0.25rem', // 4
+      '2': '0.5rem', // 8
+      '3': '0.75rem', // 12
+      '4': '1rem', // 16
+      '5': '1.5rem', // 24
+      '6': '2rem', // 32
+    }),
     stroke: {
       // current: 'currentColor',
     },
     textColor: theme => theme('colors'),
     width: theme => ({
-      // auto: 'auto',
-      // ...theme('spacing'),
-      // '1/2': '50%',
-      // '1/3': '33.33333%',
-      // '2/3': '66.66667%',
-      // '1/4': '25%',
-      // '2/4': '50%',
-      // '3/4': '75%',
-      // '1/5': '20%',
-      // '2/5': '40%',
-      // '3/5': '60%',
-      // '4/5': '80%',
-      // '1/6': '16.66667%',
-      // '2/6': '33.33333%',
-      // '3/6': '50%',
-      // '4/6': '66.66667%',
-      // '5/6': '83.33333%',
-      // '1/12': '8.33333%',
-      // '2/12': '16.66667%',
-      // '3/12': '25%',
-      // '4/12': '33.33333%',
-      // '5/12': '41.66667%',
-      // '6/12': '50%',
-      // '7/12': '58.33333%',
-      // '8/12': '66.66667%',
-      // '9/12': '75%',
-      // '10/12': '83.33333%',
-      // '11/12': '91.66667%',
-      // full: '100%',
-      // screen: '100vw',
+      auto: 'auto',
+      //...theme('spacing'),
+      '1/2': '50%',
+      '1/3': '33.33333%',
+      '2/3': '66.66667%',
+      '1/4': '25%',
+      '2/4': '50%',
+      '3/4': '75%',
+      '1/5': '20%',
+      '2/5': '40%',
+      '3/5': '60%',
+      '4/5': '80%',
+      '1/6': '16.66667%',
+      '2/6': '33.33333%',
+      '3/6': '50%',
+      '4/6': '66.66667%',
+      '5/6': '83.33333%',
+      '1/12': '8.33333%',
+      '2/12': '16.66667%',
+      '3/12': '25%',
+      '4/12': '33.33333%',
+      '5/12': '41.66667%',
+      '6/12': '50%',
+      '7/12': '58.33333%',
+      '8/12': '66.66667%',
+      '9/12': '75%',
+      '10/12': '83.33333%',
+      '11/12': '91.66667%',
+      full: '100%',
+      screen: '100vw',
     }),
     zIndex: {
       // auto: 'auto',
