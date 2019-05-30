@@ -5,8 +5,9 @@
   "main": "tailwind.config.js",
   "scripts": {
     "export-colors": "tailwindcss-export-config --config=./src/colors.js --destination=build/colors --format=scss --flat=true",
+    "export-brakepoints": "tailwindcss-export-config --config=./src/brakepoints.js --destination=build/brakepoints --format=scss --flat=true",
     "export-tokens": "tailwindcss-export-config --config=./tailwind.config.js --destination=build/tokens --format=scss --flat=true",
-    "export": "npm run export-colors && npm run export-tokens",
+    "export": "npm run export-colors && npm run export-tokens && npm run export-brakepoints",
     "build-utilities": "npm run export && postcss src/utilities --dir build/"
   },
   "author": "",
