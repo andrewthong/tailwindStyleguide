@@ -383,6 +383,7 @@ module.exports = {
     // tableLayout: ['responsive'],
     // textAlign: ['responsive'],
     // textColor: ['responsive', 'hover', 'focus'],
+    // textDecoration: ['responsive', 'hover', 'focus'],
     // spacing: ['responsive', 'hover', 'focus'],
     // textTransform: ['responsive'],
     // userSelect: ['responsive'],

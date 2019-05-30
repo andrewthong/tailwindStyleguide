@@ -5,10 +5,10 @@
     bg-transparent
     cursor-pointer
     p-0
+    no-underline
     tracking-wide
     text-blue-300
     text-inherit;
-  text-decoration: none;
 
   &:hover,
   &:focus {
