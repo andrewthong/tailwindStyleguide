@@ -1,0 +1,21 @@
+.textLinkBtn {
+  @apply
+    m-0
+    border-none
+    bg-transparent
+    cursor-pointer
+    p-0
+    tracking-wide
+    text-blue-300
+    text-inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    @apply
+      -m-px
+      border
+      border-solid
+      border-blue-300;
+  }
+}
