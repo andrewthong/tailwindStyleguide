@@ -14,11 +14,20 @@ module.exports = {
       transparent: 'transparent',
 
       white: '#ffffff',
+      black: '#000000',
 
-      black: {
+      // all shades of grey as supported
+      grey: {
+        50: '#eeeeee ',
+        100: '#d8d8d8',
+        200: '#bbbbbb',
         300: '#9e9e9e',
+        400: '#8a8a8a',
         500: '#757575',
-        700: '#3b3b3b'
+        600: '#555555',
+        700: '#3b3b3b',
+        800: '#111111',
+        900: '#000000'
       },
       yellow: {
         300: '#ffdb4d',
@@ -57,27 +66,23 @@ module.exports = {
       }
     },
     spacing: {
-      // px: '1px',
-      // '0': '0',
-      // '1': '0.25rem',
-      // '2': '0.5rem',
-      // '3': '0.75rem',
-      // '4': '1rem',
-      // '5': '1.25rem',
-      // '6': '1.5rem',
-      // '8': '2rem',
-      // '10': '2.5rem',
-      // '12': '3rem',
-      // '16': '4rem',
-      // '20': '5rem',
-      // '24': '6rem',
-      // '32': '8rem',
-      // '40': '10rem',
-      // '48': '12rem',
-      // '56': '14rem',
-      // '64': '16rem',
+      px: '1px',
+      '0': '0',
+      '1': '0.25rem', // 4
+      '2': '0.5rem', // 8
+      '3': '0.75rem', // 12
+      '4': '1rem', // 16
+      '5': '1.5rem', // 24
+      '6': '2rem', // 32
+      '7': '2.5rem', // 40
+      '8': '4rem', // 64
     },
-    backgroundColor: theme => theme('colors'),
+    // simplifying as only a few elements will have this
+    backgroundColor: theme => ({
+      white: '#ffffff',
+      black: '#000000',
+      ...theme('colors.grey')
+    }),
     backgroundPosition: {
       // bottom: 'bottom',
       // center: 'center',
@@ -96,31 +101,28 @@ module.exports = {
     },
     borderColor: theme => ({
       ...theme('colors'),
-      default: theme('colors.gray.300', 'currentColor'),
+      default: theme('colors.gray.500', 'currentColor'),
     }),
     borderRadius: {
-      // none: '0',
-      // sm: '0.125rem',
-      // default: '0.25rem',
-      // lg: '0.5rem',
-      // full: '9999px',
+      none: '0',
+      default: '0.125rem',
+      lg: '0.25rem',
+      full: '9999px',
     },
     borderWidth: {
-      // default: '1px',
-      // '0': '0',
-      // '2': '2px',
-      // '4': '4px',
-      // '8': '8px',
+      default: '1px',
+      '0': '0',
+      '2': '2px',
     },
     boxShadow: {
-      // default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      // md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      // lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-      // xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-      // '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-      // inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-      // outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
-      // none: 'none',
+      // default series is equivalent to "sharp" in design system
+      default: '0 2px 2px 0 rgba(0, 0, 0, 0.1)',
+      md: '0 2px 4px 0 rgba(0, 0, 0, 0.2)',
+      lg: '0 2px 4px 0 rgba(0, 0, 0, 0.4)',
+      'sm-soft': '0 2px 8px 0 rgba(0, 0, 0, 0.2)',
+      'md-soft': '0 2px 8px 0 rgba(0, 0, 0, 0.4)',
+      'lg-soft': '0 2px 8px 0 rgba(0, 0, 0, 0.6)',
+      none: 'none',
     },
     container: {},
     cursor: {
@@ -150,58 +152,31 @@ module.exports = {
       // default: '1',
     },
     fontFamily: {
-      // sans: [
-      //   '-apple-system',
-      //   'BlinkMacSystemFont',
-      //   '"Segoe UI"',
-      //   'Roboto',
-      //   '"Helvetica Neue"',
-      //   'Arial',
-      //   '"Noto Sans"',
-      //   'sans-serif',
-      //   '"Apple Color Emoji"',
-      //   '"Segoe UI Emoji"',
-      //   '"Segoe UI Symbol"',
-      //   '"Noto Color Emoji"',
-      // ],
-      // serif: [
-      //   'Georgia',
-      //   'Cambria',
-      //   '"Times New Roman"',
-      //   'Times',
-      //   'serif',
-      // ],
-      // mono: [
-      //   'Menlo',
-      //   'Monaco',
-      //   'Consolas',
-      //   '"Liberation Mono"',
-      //   '"Courier New"',
-      //   'monospace',
-      // ],
+      body: [
+        'Arial',
+        '"Helvetica Neue"',
+        'sans-serif'
+      ],
+      head: [
+        '"UniversLT"',
+        '"Arial Narrow"',
+        'sans-serif'
+      ]
     },
     fontSize: {
-      // xs: '0.75rem',
-      // sm: '0.875rem',
-      // base: '1rem',
-      // lg: '1.125rem',
-      // xl: '1.25rem',
-      // '2xl': '1.5rem',
-      // '3xl': '1.875rem',
-      // '4xl': '2.25rem',
-      // '5xl': '3rem',
-      // '6xl': '4rem',
+      xs: '0.75rem', // 12
+      sm: '0.875rem', // 14
+      base: '1rem', // 16
+      lg: '1.125rem', // 18
+      xl: '1.375rem', // 22
+      '2xl': '1.75rem', // 28
+      '3xl': '2.25rem', // 36
     },
     fontWeight: {
-      // hairline: '100',
-      // thin: '200',
-      // light: '300',
-      // normal: '400',
-      // medium: '500',
-      // semibold: '600',
-      // bold: '700',
-      // extrabold: '800',
-      // black: '900',
+      light: '300',
+      normal: '400',
+      medium: '500', //universLT does not have weight loaded
+      bold: '700',
     },
     height: theme => ({
       // auto: 'auto',
@@ -244,17 +219,7 @@ module.exports = {
       // screen: '100vh',
     },
     maxWidth: {
-      // xs: '20rem',
-      // sm: '24rem',
-      // md: '28rem',
-      // lg: '32rem',
-      // xl: '36rem',
-      // '2xl': '42rem',
-      // '3xl': '48rem',
-      // '4xl': '56rem',
-      // '5xl': '64rem',
-      // '6xl': '72rem',
-      // full: '100%',
+      full: '100%',
     },
     minHeight: {
       // '0': '0',
@@ -277,11 +242,13 @@ module.exports = {
       // top: 'top',
     },
     opacity: {
-      // '0': '0',
-      // '25': '0.25',
-      // '50': '0.5',
-      // '75': '0.75',
-      // '100': '1',
+      // adding (1)-4-6-9 scale but leaving the original as seem useful to have
+      '0': '0',
+      '10': '0.1',
+      '40': '0.4',
+      '60': '0.6',
+      '90': '0.9',
+      '100': '1',
     },
     order: {
       // first: '-9999',
@@ -300,42 +267,51 @@ module.exports = {
       // '11': '11',
       // '12': '12',
     },
-    // padding: theme => theme('spacing'),
+    // using only the first 6 from spacing spec, the larger ones don't look useful
+    padding: theme => ({
+      '0': '0',
+      '1': '0.25rem', // 4
+      '2': '0.5rem', // 8
+      '3': '0.75rem', // 12
+      '4': '1rem', // 16
+      '5': '1.5rem', // 24
+      '6': '2rem', // 32
+    }),
     stroke: {
       // current: 'currentColor',
     },
     textColor: theme => theme('colors'),
     width: theme => ({
-      // auto: 'auto',
-      // ...theme('spacing'),
-      // '1/2': '50%',
-      // '1/3': '33.33333%',
-      // '2/3': '66.66667%',
-      // '1/4': '25%',
-      // '2/4': '50%',
-      // '3/4': '75%',
-      // '1/5': '20%',
-      // '2/5': '40%',
-      // '3/5': '60%',
-      // '4/5': '80%',
-      // '1/6': '16.66667%',
-      // '2/6': '33.33333%',
-      // '3/6': '50%',
-      // '4/6': '66.66667%',
-      // '5/6': '83.33333%',
-      // '1/12': '8.33333%',
-      // '2/12': '16.66667%',
-      // '3/12': '25%',
-      // '4/12': '33.33333%',
-      // '5/12': '41.66667%',
-      // '6/12': '50%',
-      // '7/12': '58.33333%',
-      // '8/12': '66.66667%',
-      // '9/12': '75%',
-      // '10/12': '83.33333%',
-      // '11/12': '91.66667%',
-      // full: '100%',
-      // screen: '100vw',
+      auto: 'auto',
+      //...theme('spacing'),
+      '1/2': '50%',
+      '1/3': '33.33333%',
+      '2/3': '66.66667%',
+      '1/4': '25%',
+      '2/4': '50%',
+      '3/4': '75%',
+      '1/5': '20%',
+      '2/5': '40%',
+      '3/5': '60%',
+      '4/5': '80%',
+      '1/6': '16.66667%',
+      '2/6': '33.33333%',
+      '3/6': '50%',
+      '4/6': '66.66667%',
+      '5/6': '83.33333%',
+      '1/12': '8.33333%',
+      '2/12': '16.66667%',
+      '3/12': '25%',
+      '4/12': '33.33333%',
+      '5/12': '41.66667%',
+      '6/12': '50%',
+      '7/12': '58.33333%',
+      '8/12': '66.66667%',
+      '9/12': '75%',
+      '10/12': '83.33333%',
+      '11/12': '91.66667%',
+      full: '100%',
+      screen: '100vw',
     }),
     zIndex: {
       // auto: 'auto',
