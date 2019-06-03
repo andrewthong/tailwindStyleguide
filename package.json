@@ -4,17 +4,33 @@
   "description": "Digitalist styleguide Tailwindcss",
   "main": "tailwind.config.js",
   "scripts": {
-    "export-colors": "tailwindcss-export-config --config=./src/colors.js --destination=build/colors --format=scss --flat=true",
-    "export-brakepoints": "tailwindcss-export-config --config=./src/brakepoints.js --destination=build/brakepoints --format=scss --flat=true",
-    "export-tokens": "tailwindcss-export-config --config=./tailwind.config.js --destination=build/tokens --format=scss --flat=true",
+    "export-colors": "tailwindcss-export-config --config=./src/colors.js --destination=dist/variables/colors --format=scss --flat=true",
+    "export-brakepoints": "tailwindcss-export-config --config=./src/brakepoints.js --destination=dist/variables/brakepoints --format=scss --flat=true",
+    "export-tokens": "tailwindcss-export-config --config=./tailwind.config.js --destination=dist/variables/tokens --format=scss --flat=true",
     "export": "npm run export-colors && npm run export-tokens && npm run export-brakepoints",
-    "build-utilities": "npm run export && postcss src/utilities --dir build/"
+    "build-utilities": "npm run export && postcss src/utilities --dir dist/"
+  },
+  "browserslist": {
+    "production": [
+      "last 2 versions",
+      "not dead",
+      ">1%",
+      "IE 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version"
+    ]
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
     "postcss-cli": "^6.1.2",
+    "postcss-import": "^12.0.1",
+    "postcss-nesting": "^7.0.0",
     "tailwindcss": "^1.0.1",
     "tailwindcss-export-config": "^2.0.0-beta.1"
-  }
+  },
+  "dependencies": {}
 }

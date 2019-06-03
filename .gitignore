@@ -17,6 +17,7 @@ jsconfig.json
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/
+dist/
 
 # Dependency directories
 node_modules/

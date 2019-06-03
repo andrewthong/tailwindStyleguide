@@ -81,6 +81,7 @@ module.exports = {
     },
     // simplifying as only a few elements will have this
     backgroundColor: theme => ({
+      transparent: 'transparent',
       white: '#ffffff',
       black: '#000000',
       ...theme('colors.gray')
@@ -130,7 +131,7 @@ module.exports = {
     cursor: {
       // auto: 'auto',
       // default: 'default',
-      // pointer: 'pointer',
+      pointer: 'pointer',
       // wait: 'wait',
       // text: 'text',
       // move: 'move',
@@ -166,6 +167,7 @@ module.exports = {
       ]
     },
     fontSize: {
+      inherit: 'inherit',
       xs: '0.75rem', // 12
       sm: '0.875rem', // 14
       base: '1rem', // 16
@@ -194,7 +196,7 @@ module.exports = {
       // tighter: '-0.05em',
       // tight: '-0.025em',
       // normal: '0',
-      // wide: '0.025em',
+      wide: '0.025em',
       // wider: '0.05em',
       // widest: '0.1em',
     },
@@ -212,9 +214,9 @@ module.exports = {
       // decimal: 'decimal',
     },
     margin: (theme, { negative }) => ({
-      // auto: 'auto',
-      // ...theme('spacing'),
-      // ...negative(theme('spacing')),
+      auto: 'auto',
+      ...theme('spacing'),
+      ...negative(theme('spacing')),
     }),
     maxHeight: {
       // full: '100%',
@@ -382,6 +384,7 @@ module.exports = {
     // textAlign: ['responsive'],
     // textColor: ['responsive', 'hover', 'focus'],
     // textDecoration: ['responsive', 'hover', 'focus'],
+    // spacing: ['responsive', 'hover', 'focus'],
     // textTransform: ['responsive'],
     // userSelect: ['responsive'],
     // verticalAlign: ['responsive'],
